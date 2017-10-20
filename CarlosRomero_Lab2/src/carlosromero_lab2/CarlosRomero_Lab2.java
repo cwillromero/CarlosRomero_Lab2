@@ -103,6 +103,7 @@ public class CarlosRomero_Lab2 {
     }
     
     public static void logIn(){
+       //if(((maestros) Maestros.get(Maestros.size()-1).getUsuario() == ((maestros) Maestros.get(Maestros.size()-1).getContraseña());
         String op="";
         while(!op.equals("c")){
             op=JOptionPane.showInputDialog("LOGIN\n"+
@@ -111,6 +112,9 @@ public class CarlosRomero_Lab2 {
                    "C-Salir \n");
             if(op.equals("a") || op.equals("A")){
                 maestros();           
+            }
+            if(op.equals("b") || op.equals("B")){
+                alum();           
             }
         }
     }
@@ -189,7 +193,7 @@ public class CarlosRomero_Lab2 {
         }
     }
     
-    public void alum(){
+    public static void alum(){
         String opcion="";
         while(!opcion.equals("d")){
             opcion=JOptionPane.showInputDialog("MAESTROS\n"+
@@ -211,6 +215,54 @@ public class CarlosRomero_Lab2 {
                    }
                }
                JOptionPane.showMessageDialog(null,s);
+            }
+            if(opcion.equals("b") || opcion.equals("B")){
+                String p="";
+                while(!p.equals("f")){
+                p=JOptionPane.showInputDialog(""+
+                            "A-Nombre \n"+
+                            "B-Cuenta\n"+
+                            "C-Carrera\n"+
+                            "D-Edad\n"+
+                            "E-Dinero\n"+
+                            "F-Salir\n"+
+                            "");
+                if(p.equals("a")){
+                    int x;
+                    String n;
+                    x=Integer.parseInt(JOptionPane.showInputDialog("Posicion a Modificar"));
+                    n=JOptionPane.showInputDialog("Nuevo Nombre");
+               ((Alumnos) alumnos.get(x)).setNombre(n);
+                }
+                if(p.equals("b")){
+                    int x;
+                    int m;
+                    x=Integer.parseInt(JOptionPane.showInputDialog("Posicion a Modificar"));
+                    m=Integer.parseInt(JOptionPane.showInputDialog("Nueva Cuenta"));
+               ((Alumnos) alumnos.get(x)).setCuenta(m);
+                }
+                if(p.equals("c")){
+                    int z;
+                    String l;
+                    z=Integer.parseInt(JOptionPane.showInputDialog("Posicion a Modificar"));
+                    l=JOptionPane.showInputDialog("Nueva Carrera");
+               ((Alumnos) alumnos.get(z)).setCarrera(l);
+                }
+                if(p.equals("d")){
+                    int x;
+                    int n;
+                    x=Integer.parseInt(JOptionPane.showInputDialog("Posicion a Modificar"));
+                    n=Integer.parseInt(JOptionPane.showInputDialog("Nueva edad"));
+               ((Alumnos) alumnos.get(x)).setEdad(n);
+                }
+                if(p.equals("e")){
+                    int x;
+                    int n;
+                    x=Integer.parseInt(JOptionPane.showInputDialog("Posicion a Modificar"));
+                    n=Integer.parseInt(JOptionPane.showInputDialog("Nuevo Dinero"));
+               ((Alumnos) alumnos.get(x)).setDinero(n);
+                }
+                }
             }
         }
     }
