@@ -189,6 +189,32 @@ public class CarlosRomero_Lab2 {
         }
     }
     
+    public void alum(){
+        String opcion="";
+        while(!opcion.equals("d")){
+            opcion=JOptionPane.showInputDialog("MAESTROS\n"+
+                            "A-Listar Maestros \n"+
+                            "B-Modificar Maetros\n"+
+                            "C-Eliminar Maestros\n"+
+                            "D-Salir\n"+
+                            "");
+            if(opcion.equals("c") || opcion.equals("C")){
+                int k;
+                k=Integer.parseInt(JOptionPane.showInputDialog("Posicion para Eliminar"));
+                alumnos.remove(k);
+            }
+            if(opcion.equals("a") || opcion.equals("A")){
+                String s="";
+                for (Object t : alumnos) {
+                   if (t instanceof Alumnos) {
+                    s+=""+alumnos.indexOf(t)+""+"-"+t+"\n";    
+                   }
+               }
+               JOptionPane.showMessageDialog(null,s);
+            }
+        }
+    }
+    
     public static void matricula(){
         String nombre=JOptionPane.showInputDialog("Ingrese El Nombre:");
         int cuenta=Integer.parseInt(JOptionPane.showInputDialog("Ingrese Numero de cuenta:"));
@@ -206,7 +232,7 @@ public class CarlosRomero_Lab2 {
         alumnos.add(new Alumnos(nombre,cuenta,carrera,edad,dinero,usuario,contra,clases));  
         din=din+((din/100)*20);
         }
-        
+       
     }
 
 
