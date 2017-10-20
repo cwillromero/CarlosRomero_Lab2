@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class CarlosRomero_Lab2 {
     static ArrayList clases=new ArrayList();
-    static String seccion;
+    static String seccion="";
     static ArrayList Maetros=new ArrayList();
     static Maestros maestro=new Maestros(); 
     static Clases c=new Clases();
@@ -50,14 +50,19 @@ public class CarlosRomero_Lab2 {
                    "C-Salir \n");
            
            if(op.equals("a") || op.equals("A")){
-                String Nombre=JOptionPane.showInputDialog("Ingrese El Nombre:");
+               if(seccion==""){
+                JOptionPane.showMessageDialog(null,"Primero debe crear clases.");
+                break;
+               }else{
+                  String Nombre=JOptionPane.showInputDialog("Ingrese El Nombre:");
                 int Salario;
                 String titulo=JOptionPane.showInputDialog("Ingrese El Titulo:");
                 String usuario=JOptionPane.showInputDialog("Ingrese El Usuario:");
                 String maestria=JOptionPane.showInputDialog("Ingrese la Maestria:");
                 String contrasena=JOptionPane.showInputDialog("Ingrese la contraseña:");
                 int cantidad=Integer.parseInt(JOptionPane.showInputDialog("Ingrese La cantidad maxima de clases:"));
-                String secc=JOptionPane.showInputDialog("Ingrese la seccion:\n"+seccion+"");
+                String secc=JOptionPane.showInputDialog("Ingrese la seccion:\n"+seccion+""); 
+               }
                 
            }
            if(op.equals("b") || op.equals("B")){
