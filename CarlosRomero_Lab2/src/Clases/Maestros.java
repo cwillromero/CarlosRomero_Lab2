@@ -19,13 +19,13 @@ public class Maestros {
     public String maestria;
     public String contrasena;
     public int cantidad;
-    public ArrayList<String> secciones=new ArrayList();
+    public String secciones;
     
     public Maestros(){
         
     }
     
-    public Maestros(String nombre, String titulo, String usuario, String maestria, String contrasena, int cantidad){
+    public Maestros(String nombre, String titulo, String usuario, String maestria, String contrasena, int cantidad, String secciones){
         this.nombre=nombre;
         this.titulo=titulo;
         this.cantidad=cantidad;
@@ -78,17 +78,17 @@ public class Maestros {
         return cantidad;
     }
     
-    public void  setSecciones(ArrayList<String> secciones){
+    public void  setSeccion(String secciones){
         this.secciones=secciones;
     }
-    public ArrayList<String> getSecciones(){
+    public String getSecciones(){
         return secciones;
     }
     
     @Override
     public String toString(){
-        return "Nombre :"+nombre+"  Titulo"+titulo+"  Usuario:"+usuario
-                +"  Mestría: "+maestria+"  Salario:"+Salario+"  Contraseña:"+contrasena+
-                "  Cantidad Maxima de Clases:"+cantidad+"  Secciones:"+secciones.size();
+        return "Nombre :"+nombre+"  Titulo: "+titulo+"  Usuario:"+usuario
+                +"  Mestría: "+maestria+"  Salario: "+Salario+"  Contraseña: "+contrasena+
+                "  Cantidad Maxima de Clases: "+cantidad+"  Secciones: "+secciones;
     }//Metodo para dar formato a la salidad
 }
