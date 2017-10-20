@@ -16,9 +16,11 @@ import javax.swing.JOptionPane;
  */
 public class CarlosRomero_Lab2 {
     static ArrayList clases=new ArrayList();
+    static String seccion;
     static ArrayList Maetros=new ArrayList();
     static Maestros maestro=new Maestros(); 
     static Clases c=new Clases();
+    static ArrayList s=new ArrayList();
     /**
      * @param args the command line arguments
      */
@@ -48,7 +50,15 @@ public class CarlosRomero_Lab2 {
                    "C-Salir \n");
            
            if(op.equals("a") || op.equals("A")){
-              
+                String Nombre=JOptionPane.showInputDialog("Ingrese El Nombre:");
+                int Salario;
+                String titulo=JOptionPane.showInputDialog("Ingrese El Titulo:");
+                String usuario=JOptionPane.showInputDialog("Ingrese El Usuario:");
+                String maestria=JOptionPane.showInputDialog("Ingrese la Maestria:");
+                String contrasena=JOptionPane.showInputDialog("Ingrese la contraseña:");
+                int cantidad=Integer.parseInt(JOptionPane.showInputDialog("Ingrese La cantidad maxima de clases:"));
+                String secc=JOptionPane.showInputDialog("Ingrese la seccion:\n"+seccion+"");
+                
            }
            if(op.equals("b") || op.equals("B")){
                 String m=maestro.nombre;
@@ -57,7 +67,8 @@ public class CarlosRomero_Lab2 {
                 String seccion=JOptionPane.showInputDialog("Ingrese El Nombre De Seccion:");
                 int max=Integer.parseInt(JOptionPane.showInputDialog("Ingrese La cantidad maxima de Alumnos:"));
                 int v=Integer.parseInt(JOptionPane.showInputDialog("Ingrese Las Unidades Valorativas:")); 
-                clases.add(new Clases(nombre,seccion,max,m,v));
+                clases.add(new Clases(nombre,seccion,max,m,v));                
+                System.out.print(seccion);
            }
            if(op.equals("c") || op.equals("c")){
             String s="";
@@ -68,7 +79,8 @@ public class CarlosRomero_Lab2 {
                }
                JOptionPane.showMessageDialog(null,s);  
            }
-       }
+       seccion+=""+((Clases) clases.get(clases.size()-1)).getSeccion()+"\n";
+        }
         
     }
     

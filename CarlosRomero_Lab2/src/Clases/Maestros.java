@@ -13,6 +13,7 @@ import java.util.ArrayList;
  */
 public class Maestros {
     public String nombre="";
+    public int Salario;
     public String titulo;
     public String usuario;
     public String maestria;
@@ -32,6 +33,7 @@ public class Maestros {
         this.secciones=secciones;
         this.usuario=usuario;
         this.maestria=maestria;
+        Salario=1000*cantidad;
     }//Constructor
     
     public void setNombre(String nombre){
@@ -86,7 +88,7 @@ public class Maestros {
     @Override
     public String toString(){
         return "Nombre :"+nombre+"  Titulo"+titulo+"  Usuario:"+usuario
-                +"  Mestría: "+maestria+"  Contraseña:"+contrasena+
+                +"  Mestría: "+maestria+"  Salario:"+Salario+"  Contraseña:"+contrasena+
                 "  Cantidad Maxima de Clases:"+cantidad+"  Secciones:"+secciones.size();
     }//Metodo para dar formato a la salidad
 }
