@@ -28,7 +28,7 @@ public class CarlosRomero_Lab2 {
 
         String opcion="";
        while(!opcion.equals("d")){
-           opcion=JOptionPane.showInputDialog(""+
+           opcion=JOptionPane.showInputDialog("BIENVENIDO\n"+
                    "A-Administración \n"+
                    "B-Matricula \n"+
                    "C-Log in \n"+
@@ -46,7 +46,7 @@ public class CarlosRomero_Lab2 {
     public static void Administracion(){
         String op="";
         while(!op.equals("d")){
-           op=JOptionPane.showInputDialog(""+
+           op=JOptionPane.showInputDialog("ADMINISTRACION\n"+
                    "A-Añadir Maestros \n"+
                    "B-Crear Clases \n"+
                    "C-Listar clases \n"+
@@ -95,7 +95,7 @@ public class CarlosRomero_Lab2 {
     public static void logIn(){
         String op="";
         while(!op.equals("c")){
-            op=JOptionPane.showInputDialog(""+
+            op=JOptionPane.showInputDialog("LOGIN\n"+
                    "A-Maestros \n"+
                    "B-Alumnos \n"+
                    "C-Salir \n");
@@ -108,7 +108,7 @@ public class CarlosRomero_Lab2 {
     public static void maestros(){
         String opcion="";
         while(!opcion.equals("d")){
-            opcion=JOptionPane.showInputDialog(""+
+            opcion=JOptionPane.showInputDialog("MAESTROS\n"+
                             "A-Listar Maestros \n"+
                             "B-Modificar Maetros\n"+
                             "C-Eliminar Maestros\n"+
@@ -129,7 +129,35 @@ public class CarlosRomero_Lab2 {
                     int x;
                     String n;
                     x=Integer.parseInt(JOptionPane.showInputDialog("Posicion a Modificar"));
-                    n=JOptionPane.showInputDialog("Nuevo nombre");
+                    n=JOptionPane.showInputDialog("Nuevo Nombre");
+               ((Maestros) Maetros.get(x)).setNombre(n);
+                }
+                if(p.equals("b")){
+                    int x;
+                    String m;
+                    x=Integer.parseInt(JOptionPane.showInputDialog("Posicion a Modificar"));
+                    m=JOptionPane.showInputDialog("Nuevo Titulo");
+               ((Maestros) Maetros.get(x)).setTitulo(m);
+                }
+                if(p.equals("c")){
+                    int z;
+                    String l;
+                    z=Integer.parseInt(JOptionPane.showInputDialog("Posicion a Modificar"));
+                    l=JOptionPane.showInputDialog("Nueva Maestria");
+               ((Maestros) Maetros.get(z)).setNombre(l);
+                }
+                if(p.equals("d")){
+                    int x;
+                    String n;
+                    x=Integer.parseInt(JOptionPane.showInputDialog("Posicion a Modificar"));
+                    n=JOptionPane.showInputDialog("Nuevo Usuario");
+               ((Maestros) Maetros.get(x)).setNombre(n);
+                }
+                if(p.equals("e")){
+                    int x;
+                    String n;
+                    x=Integer.parseInt(JOptionPane.showInputDialog("Posicion a Modificar"));
+                    n=JOptionPane.showInputDialog("Nuevo Contraseña");
                ((Maestros) Maetros.get(x)).setNombre(n);
                 }
                 }
@@ -142,6 +170,11 @@ public class CarlosRomero_Lab2 {
                    }
                }
                JOptionPane.showMessageDialog(null,s);
+            }
+            if(opcion.equals("c") || opcion.equals("C")){
+                int k;
+                k=Integer.parseInt(JOptionPane.showInputDialog("Posicion para Eliminar"));
+                Maetros.remove(k);
             }
         }
     }
