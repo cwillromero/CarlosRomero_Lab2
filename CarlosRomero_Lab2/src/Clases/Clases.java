@@ -19,7 +19,11 @@ public class Clases {
     public int v;
     public ArrayList<String> alumnos=new ArrayList();
     
-    public Clases(String nombre, String seccion, int max, String maestro, int v, ArrayList<String> alumnos){
+    public Clases(){
+        
+    }
+    
+    public Clases(String nombre, String seccion, int max, String maestro, int v){
         this.nombre=nombre;
         this.seccion=seccion;
         this.max=max;
@@ -72,8 +76,8 @@ public class Clases {
     
     @Override
     public String toString(){
-        return "Nombre :"+nombre+"  Seccion:"+seccion+"  Cantidad Maxima de Alumnos:"+max
-                +"  Mestro: "+maestro+"  Unidades Valorativas:"+v+
-                "  Alumnos Matriculados:"+alumnos.size();
+        return "Nombre :"+nombre+"  Seccion :"+seccion+"  Cantidad Maxima de Alumnos :"+max
+                +"   Maestro : "+maestro+"  Unidades Valorativas :"+v+
+                "  Alumnos Matriculados :"+alumnos.size();
     }//Metodo para dar formato a la salidad
 }

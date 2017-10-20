@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Will
  */
 public class Maestros {
-    public String nombre;
+    public String nombre="";
     public String titulo;
     public String usuario;
     public String maestria;
@@ -20,7 +20,11 @@ public class Maestros {
     public int cantidad;
     public ArrayList<String> secciones=new ArrayList();
     
-    public Maestros(String nombre, String titulo, String usuario, String maestria, String contrasena, int cantidad, ArrayList<String> secciones){
+    public Maestros(){
+        
+    }
+    
+    public Maestros(String nombre, String titulo, String usuario, String maestria, String contrasena, int cantidad){
         this.nombre=nombre;
         this.titulo=titulo;
         this.cantidad=cantidad;
