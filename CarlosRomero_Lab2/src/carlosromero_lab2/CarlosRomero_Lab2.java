@@ -5,6 +5,7 @@
  */
 package carlosromero_lab2;
 
+import Clases.Alumnos;
 import Clases.Clases;
 import Clases.Maestros;
 import java.util.ArrayList;
@@ -20,7 +21,9 @@ public class CarlosRomero_Lab2 {
     static ArrayList Maetros=new ArrayList();
     static Maestros maestro=new Maestros(); 
     static Clases c=new Clases();
-    static ArrayList s=new ArrayList();
+    static ArrayList alumnos=new ArrayList();
+    static int din=1250;
+    
     /**
      * @param args the command line arguments
      */
@@ -36,6 +39,9 @@ public class CarlosRomero_Lab2 {
            
            if (opcion.equals("a") || opcion.equals("A")) {
                Administracion();
+           }
+           if (opcion.equals("b") || opcion.equals("B")) {
+               matricula();
            }
            if (opcion.equals("c") || opcion.equals("C")) {
                logIn();
@@ -65,6 +71,10 @@ public class CarlosRomero_Lab2 {
                 String contrasena=JOptionPane.showInputDialog("Ingrese la contraseña:");
                 int cantidad=Integer.parseInt(JOptionPane.showInputDialog("Ingrese La cantidad maxima de clases:"));
                 String secc=JOptionPane.showInputDialog("Ingrese la seccion:\n"+seccion+""); 
+                while(!seccion.contains(secc)){
+                   JOptionPane.showMessageDialog(null,"Seccion no existe."); 
+                   secc=JOptionPane.showInputDialog("Ingrese la seccion:\n"+seccion+""); 
+                }
                 Maetros.add(new Maestros(Nombre,titulo,usuario,maestria,contrasena,cantidad,secc));  
                }
                 
@@ -178,6 +188,28 @@ public class CarlosRomero_Lab2 {
             }
         }
     }
-}
+    
+    public static void matricula(){
+        String nombre=JOptionPane.showInputDialog("Ingrese El Nombre:");
+        int cuenta=Integer.parseInt(JOptionPane.showInputDialog("Ingrese Numero de cuenta:"));
+        String carrera=JOptionPane.showInputDialog("Ingrese Carrera:");
+        int edad=Integer.parseInt(JOptionPane.showInputDialog("Ingrese La edad:"));
+        int dinero=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el dinero"));
+        String usuario=JOptionPane.showInputDialog("Ingrese El usuario:");
+        String contra=JOptionPane.showInputDialog("Ingrese El contraseña:");
+        String clases=JOptionPane.showInputDialog("Ingrese las clases separadas por comas");
+        String[] split=clases.split(",");
+        int total=din*split.length;
+        if((dinero-total)<0){
+            JOptionPane.showMessageDialog(null,"Dinero insuficiente! No puede matricularse");
+        }
+        alumnos.add(new Alumnos(nombre,cuenta,carrera,edad,dinero,usuario,contra,clases));  
+        din=din+((din/100)*20);
+        }
+        
+    }
+
+
+
     
 
