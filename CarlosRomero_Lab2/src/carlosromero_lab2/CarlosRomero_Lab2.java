@@ -5,6 +5,9 @@
  */
 package carlosromero_lab2;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Will
@@ -15,7 +18,15 @@ public class CarlosRomero_Lab2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        ArrayList lista=new ArrayList();
+        String opcion="";
+       while(!opcion.equals("d")){
+           opcion=JOptionPane.showInputDialog(""+
+                   "A-Administración \n"+
+                   "B-Matricula \n"+
+                   "C-Log in \n"+
+                   "D-Salir \n");
+       }
     }
     
 }
